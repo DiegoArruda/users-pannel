@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from '../../user';
 import { CommonModule, NgClass } from '@angular/common';
-import { UserDetailsComponent } from '../../user-details/user-details.component';
+import { UserDetailsComponent } from '../user-details/user-details.component';
 
 @Component({
   selector: 'app-home',

@@ -1,6 +1,6 @@
-export interface User {
-  id: number;
-  name: string;
-  email: string;
-  status: boolean;
+export class User {
+  id!: number;
+  name!: string;
+  email!: string;
+  status!: boolean;
 }
