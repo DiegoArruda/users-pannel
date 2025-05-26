@@ -26,15 +26,15 @@
 }
 
 .selected {
-  background-color: #e0f7fa; /* Example: light cyan background for selected user */
-  border: 2px solid #0288d1; /* Example: blue border */
+  background-color: #e0f7fa;
+  border: 2px solid #0288d1;
 }
 
 .details-card {
   margin-top: 10px;
   padding: 15px;
   border: 1px solid #0288d1;
-  background-color: #f0f8ff; /* Light blue background */
+  background-color: #f0f8ff;
   border-radius: 5px;
 }
 

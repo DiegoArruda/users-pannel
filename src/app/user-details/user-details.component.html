@@ -1,0 +1,17 @@
+@if (isOpen) {
+  <div class="modal-overlay">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>User Details</h3>
+      <button class="close-button" (click)="closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <p><strong>ID:</strong> {{ user?.id }}</p>
+      <p><strong>Name:</strong> {{ user?.name }}</p>
+      <p><strong>Email:</strong> {{ user?.email }}</p>
+      <p><strong>Status:</strong> {{ user?.status ? 'Active' : 'Inactive' }}</p>
+    </div>
+  </div>
+</div>
+}
+

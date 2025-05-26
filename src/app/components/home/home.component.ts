@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { User } from '../../user';
 import { CommonModule, NgClass } from '@angular/common';
+import { UserDetailsComponent } from '../../user-details/user-details.component';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, NgClass],
+  imports: [CommonModule, NgClass, UserDetailsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
@@ -19,12 +20,11 @@ export class HomeComponent {
     { id: 7, name: 'Maria', email: 'test', status: true },
   ];
 
-  selectedUserId: number | null = null; // Track selected user by ID
+  selectedUserId: number | null = null;
 
   toggleDetails(userId: number) {
     this.selectedUserId = this.selectedUserId === userId ? null : userId;
   }
-  // Handle click to select a user
   selectUser(userId: number) {
     this.selectedUserId = this.selectedUserId === userId ? null : userId;
   }

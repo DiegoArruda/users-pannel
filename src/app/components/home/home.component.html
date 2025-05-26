@@ -26,15 +26,11 @@
     <button (click)="toggleDetails(user.id)">
         {{ selectedUserId === user.id ? 'Esconder Detalhes' : 'Mostrar Detalhes' }}
       </button>
-      @if (selectedUserId === user.id) {
-        <div class="details-card">
-          <h3>User Details</h3>
-          <p><strong>ID:</strong> {{ user.id }}</p>
-          <p><strong>Name:</strong> {{ user.name }}</p>
-          <p><strong>Email:</strong> {{ user.email }}</p>
-          <p><strong>Status:</strong> {{ user.status ? 'Active' : 'Inactive' }}</p>
-        </div>
-      }
+      <app-user-details
+    [user]="selectedUserId"
+    [isOpen]="selectedUserId === user.id"
+    (close)="toggleDetails(user.id)">
+  </app-user-details>
   </div>
 } @empty {
   <p>No users in the database</p>
