@@ -1,0 +1,42 @@
+<div id="user-title">
+  <h1>User List</h1>
+</div>
+
+<div class="user-list">
+@for (user of users; track user.id) {
+  <div (click)="selectUser(user.id)" class="user-data"
+   [ngClass]="{
+        'active': user.status,
+        'inactive': !user.status,
+        'selected': selectedUserId === user.id
+      }"
+  >
+    <p>{{user.name}}</p>
+    @if (user.status) {
+      <p>
+        Active
+      </p>
+    }@else {
+      <p>
+        Inactive
+      </p>
+    }
+  </div>
+  <div class="user-details">
+    <button (click)="toggleDetails(user.id)">
+        {{ selectedUserId === user.id ? 'Esconder Detalhes' : 'Mostrar Detalhes' }}
+      </button>
+      @if (selectedUserId === user.id) {
+        <div class="details-card">
+          <h3>User Details</h3>
+          <p><strong>ID:</strong> {{ user.id }}</p>
+          <p><strong>Name:</strong> {{ user.name }}</p>
+          <p><strong>Email:</strong> {{ user.email }}</p>
+          <p><strong>Status:</strong> {{ user.status ? 'Active' : 'Inactive' }}</p>
+        </div>
+      }
+  </div>
+} @empty {
+  <p>No users in the database</p>
+}
+</div>
